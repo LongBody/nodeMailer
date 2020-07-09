@@ -6,7 +6,10 @@ const app = express()
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser")
 const session = require("express-session")
-let ejs = require('ejs');
+var popup = require('popups');
+
+
+
 
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 app.set("view engine", "ejs")
@@ -91,7 +94,9 @@ app.post('/user', urlencodedParser, (req, res) => {
 
     main().catch(console.error);
 
-    alert("Check your email")
+    popup.alert({
+        content: 'Check Your Email'
+    });
 })
 app.use(bodyParser.json())
 app.use((req, res, next) => {
