@@ -1,1 +1,1 @@
-wed :node server.js
+web npm start
