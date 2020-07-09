@@ -90,7 +90,8 @@ app.post('/user', urlencodedParser, (req, res) => {
     }
 
     main().catch(console.error);
-    res.redirect('/')
+
+    alert("Check your email")
 })
 app.use(bodyParser.json())
 app.use((req, res, next) => {
