@@ -128,11 +128,6 @@ app.post('/test', (req, res) => {
     res.json({ message: "hello" })
 })
 
-app.listen(port, (err) => {
-    if (err) {
-        console.log(err)
-    } else {
-        console.log("Server start successfully")
-    }
-
-})
+app.listen(port, '0.0.0.0', () => {
+    console.log('listening on *:3000');
+});
