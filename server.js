@@ -84,6 +84,8 @@ app.post('/user', urlencodedParser, (req, res) => {
             html: user
         });
 
+
+
         console.log("Message sent: %s", info.messageId);
         // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
 
@@ -94,10 +96,9 @@ app.post('/user', urlencodedParser, (req, res) => {
 
     main().catch(console.error);
 
-    function alertR() {
-        alert("Check your email")
-    }
-    alertR()
+    res.redirect('/checkMail')
+
+
 })
 app.use(bodyParser.json())
 app.use((req, res, next) => {
@@ -150,6 +151,11 @@ app.get('/', (req, res) => {
     } else {
         res.send("Your request :" + req.session.reqCount + " times!")
     }
+
+})
+
+app.get('/checkMail', (req, res) => {
+    res.send("Check your email")
 
 })
 
