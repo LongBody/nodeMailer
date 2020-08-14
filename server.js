@@ -71,7 +71,7 @@ app.post('/user', urlencodedParser, (req, res) => {
             service: 'gmail',
             auth: {
                 user: 'nguyenthanhlong1120@gmail.com',
-                pass: 'longnttbx30112k'
+                pass: 'longnttbx30112000'
             }
         });
 
